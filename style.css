@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #121212;
+}
+
+#chat-toggle {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: rgb(197, 196, 111);
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#chat-toggle span {
+  pointer-events: none;
+}
+
+#chat-toggle:hover {
+  color: black;
+}
+
+#chat-toggle::after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+#chat-toggle:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+  transition: all 0.5s;
+}
+
+#chat-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+#chat-container {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 320px;
+  height: 420px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 999;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.chat-header {
+  padding: 10px;
+  background: linear-gradient(to right, #0f6612, #f1c40f);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+#chat-log {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 8px 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background: #f1c40f;
+  color: black;
+  align-self: flex-end;
+  border-radius: 20px 20px 0 20px; /* chat bubble shape */
+  position: relative;
+}
+
+.message.bot {
+  background: #0f6612;
+  color: black;
+  align-self: flex-start;
+  border-radius: 20px 20px 20px 0; /* chat bubble shape */
+  position: relative;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  background: #fcfcfc;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+#send-btn {
+  margin-left: 10px;
+  background: #0f6612;
+  color: black;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>420 Union Chat Bot</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Chat Toggle Button -->
+  <button id="chat-toggle" class="btn">
+    <svg id="chat-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f6612" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  </button>    
+
+  <!-- Chat Container -->
+  <div id="chat-container" class="hidden">
+    <div class="chat-header">420 Union Chat Bot</div>
+    <div id="chat-log"></div>
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Type message here..." />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
